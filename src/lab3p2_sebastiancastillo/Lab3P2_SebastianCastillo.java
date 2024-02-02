@@ -107,6 +107,9 @@ public class Lab3P2_SebastianCastillo {
                         }
                         pokemon.add(new Grass_Type(habitat, dominio, nombre, entrada, naturaleza));
                         pokemondisp.add(new Grass_Type(habitat, dominio, nombre, entrada, naturaleza));
+                    }else{
+                        System.out.println("Opcion no valida");
+                        break;
                     }
 
                     break;
