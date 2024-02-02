@@ -98,14 +98,26 @@ public class Lab3P2_SebastianCastillo {
                         while (dominio > 100 || dominio < 0) {
                             System.out.println("Numero no valido");
                             System.out.println("Ingrese su dominio sobre las plantas");
-                             dominio = leer.nextInt();
+                            dominio = leer.nextInt();
                         }
                         pokemon.add(new Grass_Type(habitat, dominio, nombre, entrada, naturaleza));
                     }
 
                     break;
                 case 2:
-                    
+                    System.out.println("Ingrese el color ");
+                    leer.nextLine();
+                    String color = leer.nextLine();
+                    System.out.println("Ingrese un numero de serie");
+                    int serie = leer.nextInt();
+                    System.out.println("Ingrese la eficiencia de atrapado 1-3");
+                    int eficiencia = leer.nextInt();
+                    while (eficiencia < 1 || eficiencia > 3) {
+                        System.out.println("Numero no valido");
+                        System.out.println("Ingrese la eficiencia de atrapado 1-3");
+                        eficiencia = leer.nextInt();
+                    }
+                    pokeball.add(new Pokeball(color,serie,eficiencia));
                     break;
                 case 3:
                     break;
