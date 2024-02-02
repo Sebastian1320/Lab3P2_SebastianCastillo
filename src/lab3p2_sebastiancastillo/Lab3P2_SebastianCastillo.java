@@ -153,7 +153,7 @@ public class Lab3P2_SebastianCastillo {
                     }
                     break;
                 case 4:
-                    System.out.println("Ingrese que tipo de pokemon quiere crear 1. fuego, 2.Agua,3.Planta");
+                    System.out.println("Ingrese que tipo de pokemon quiere Eliminar 1. fuego, 2.Agua,3.Planta");
                     op2 = leer.nextInt();
                     if (op2 == 1) {
                         for (int i = 0; i < pokemon.size(); i++) {
@@ -163,8 +163,8 @@ public class Lab3P2_SebastianCastillo {
                         }
                         System.out.println("Ingrese el indice del pokemon que quiera eliminar");
                         int ind = leer.nextInt();
-                        while (ind > pokemon.size()) {
-                            System.out.println("EL numero ingresado esta en la lista");
+                        while (ind > pokemon.size()-1) {
+                            System.out.println("EL numero ingresado no esta en la lista");
                             System.out.println("Ingrese el indice del pokemon que quiere eliminar");
                             ind = leer.nextInt();
                         }
@@ -183,7 +183,7 @@ public class Lab3P2_SebastianCastillo {
                         }
                         System.out.println("Ingrese el indice del pokemon que quiera eliminar");
                         int ind = leer.nextInt();
-                        while (ind > pokemon.size()) {
+                        while (ind > pokemon.size()-1) {
                             System.out.println("EL numero ingresado esta en la lista");
                             System.out.println("Ingrese el indice del pokemon que quiere eliminar");
                             ind = leer.nextInt();
@@ -204,7 +204,7 @@ public class Lab3P2_SebastianCastillo {
                         }
                         System.out.println("Ingrese el indice del pokemon que quiera eliminar");
                         int ind = leer.nextInt();
-                        while (ind > pokemon.size()) {
+                        while (ind > pokemon.size()-1) {
                             System.out.println("EL numero ingresado esta en la lista");
                             System.out.println("Ingrese el indice del pokemon que quiere eliminar");
                             ind = leer.nextInt();
@@ -324,7 +324,7 @@ public class Lab3P2_SebastianCastillo {
                         }
                         System.out.println("Ingrese el indice del pokemon que quiere modificar");
                         ind = leer.nextInt();
-                        while (ind > pokemon.size() || !(pokemon.get(ind) instanceof Fire_Type)) {
+                        while (ind > pokemon.size()-1 || !(pokemon.get(ind) instanceof Fire_Type)) {
                             System.out.println("El indice de ese pokemon no es valido");
                             System.out.println("Ingrese el indice del pokemon que quiere modificar");
                             ind = leer.nextInt();
@@ -364,7 +364,7 @@ public class Lab3P2_SebastianCastillo {
                         }
                         System.out.println("Ingrese el indice del pokemon que quiere modificar");
                         ind = leer.nextInt();
-                        while (ind > pokemon.size() || !(pokemon.get(ind) instanceof Water_Type)) {
+                        while (ind > pokemon.size()-1 || !(pokemon.get(ind) instanceof Water_Type)) {
                             System.out.println("El indice de ese pokemon no es valido");
                             System.out.println("Ingrese el indice del pokemon que quiere modificar");
                             ind = leer.nextInt();
@@ -414,7 +414,7 @@ public class Lab3P2_SebastianCastillo {
                          }
                         System.out.println("Ingrese el indice del pokemon que quiere modificar");
                         ind = leer.nextInt();
-                        while (ind > pokemon.size() || !(pokemon.get(ind) instanceof Grass_Type)) {
+                        while (ind > pokemon.size()-1 || !(pokemon.get(ind) instanceof Grass_Type)) {
                             System.out.println("El indice de ese pokemon no es valido");
                             System.out.println("Ingrese el indice del pokemon que quiere modificar");
                             ind = leer.nextInt();
