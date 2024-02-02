@@ -117,11 +117,30 @@ public class Lab3P2_SebastianCastillo {
                         System.out.println("Ingrese la eficiencia de atrapado 1-3");
                         eficiencia = leer.nextInt();
                     }
-                    pokeball.add(new Pokeball(color,serie,eficiencia));
+                    pokeball.add(new Pokeball(color, serie, eficiencia));
                     break;
                 case 3:
+                    System.out.println("Tipos fuego");
+                    for (int i = 0; i < pokemon.size(); i++) {
+                        if (pokemon.get(i) instanceof Fire_Type) {
+                            System.out.println(i + ". " + pokemon.get(i).toString());
+                        }
+                    }
+                    System.out.println("Tipos agua");
+                    for (int i = 0; i < pokemon.size(); i++) {
+                        if (pokemon.get(i) instanceof Water_Type) {
+                            System.out.println(i + ". " + pokemon.get(i).toString());
+                        }
+                    }
+                    System.out.println("Tipos planta");
+                    for (int i = 0; i < pokemon.size(); i++) {
+                        if (pokemon.get(i) instanceof Grass_Type) {
+                            System.out.println(i + ". " + pokemon.get(i).toString());
+                        }
+                    }
                     break;
                 case 4:
+
                     break;
                 case 5:
                     break;

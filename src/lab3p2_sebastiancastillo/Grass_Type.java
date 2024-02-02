@@ -33,6 +33,12 @@ public class Grass_Type extends Pokemon {
     public void setDominio(int dominio) {
         this.dominio = dominio;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", habitat: " + habitat + ", dominio: " + dominio;
+    }
+    
     
     
 }

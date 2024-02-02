@@ -33,5 +33,11 @@ public class Water_Type extends Pokemon {
     public void setRapidez(int rapidez) {
         this.rapidez = rapidez;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", vive fuera del agua: " + vivir + ", Rapidez: " + rapidez;
+    }
+    
     
 }

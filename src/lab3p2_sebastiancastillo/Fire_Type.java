@@ -24,6 +24,11 @@ public class Fire_Type extends Pokemon {
     public void setLlamas(int llamas) {
         this.llamas = llamas;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+", llamas: " + llamas ;
+    }
     
     
 }
