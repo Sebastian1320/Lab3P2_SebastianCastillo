@@ -42,6 +42,11 @@ public class Pokeball {
     public void setEficiencia(int eficiencia) {
         this.eficiencia = eficiencia;
     }
+
+    @Override
+    public String toString() {
+        return "color: " + color + ", numero de serie: " + num_s + ", eficiencia: " + eficiencia ;
+    }
     
     
 }

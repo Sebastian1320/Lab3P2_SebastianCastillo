@@ -5,6 +5,7 @@
 package lab3p2_sebastiancastillo;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -18,6 +19,7 @@ public class Lab3P2_SebastianCastillo {
      */
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
+        Random rng=new Random();
         System.out.println("***** M E N U *****");
         System.out.println("1. Crear pokemon");
         System.out.println("2. Crar Pokebola");
@@ -140,9 +142,86 @@ public class Lab3P2_SebastianCastillo {
                     }
                     break;
                 case 4:
+                    System.out.println("Ingrese que tipo de pokemon quiere crear 1. fuego, 2.Agua,3.Planta");
+                    op2 = leer.nextInt();
+                    if (op2 == 1) {
+                        for (int i = 0; i < pokemon.size(); i++) {
+                            if (pokemon.get(i) instanceof Fire_Type) {
+                                System.out.println(i + ". " + pokemon.get(i).toString());
+                            }
+                        }
+                        System.out.println("Ingrese el indice del pokemon que quiera eliminar");
+                        int ind = leer.nextInt();
+                        while (ind > pokemon.size()) {
+                            System.out.println("EL numero ingresado esta en la lista");
+                            System.out.println("Ingrese el indice del pokemon que quiere eliminar");
+                            ind = leer.nextInt();
+                        }
+                        if (pokemon.get(ind) instanceof Fire_Type) {
+                            pokemon.remove(ind);
+                            System.out.println("Se ha eliminado con exito");
+                        } else {
+                            System.out.println("El pokemon elegido no es tipo fuego");
+                            break;
+                        }
+                    } else if (op2 == 2) {
+                        for (int i = 0; i < pokemon.size(); i++) {
+                            if (pokemon.get(i) instanceof Water_Type) {
+                                System.out.println(i + ". " + pokemon.get(i).toString());
+                            }
+                        }
+                        System.out.println("Ingrese el indice del pokemon que quiera eliminar");
+                        int ind = leer.nextInt();
+                        while (ind > pokemon.size()) {
+                            System.out.println("EL numero ingresado esta en la lista");
+                            System.out.println("Ingrese el indice del pokemon que quiere eliminar");
+                            ind = leer.nextInt();
+                        }
+                        if (pokemon.get(ind) instanceof Water_Type) {
+                            pokemon.remove(ind);
+                            System.out.println("Se ha eliminado con exito");
+                        } else {
+                            System.out.println("El pokemon elegido no es tipo agua");
+                            break;
+                        }
 
+                    } else if (op2 == 3) {
+                        for (int i = 0; i < pokemon.size(); i++) {
+                            if (pokemon.get(i) instanceof Grass_Type) {
+                                System.out.println(i + ". " + pokemon.get(i).toString());
+                            }
+                        }
+                        System.out.println("Ingrese el indice del pokemon que quiera eliminar");
+                        int ind = leer.nextInt();
+                        while (ind > pokemon.size()) {
+                            System.out.println("EL numero ingresado esta en la lista");
+                            System.out.println("Ingrese el indice del pokemon que quiere eliminar");
+                            ind = leer.nextInt();
+                        }
+                        if (pokemon.get(ind) instanceof Grass_Type) {
+                            pokemon.remove(ind);
+                            System.out.println("Se ha eliminado con exito");
+                        } else {
+                            System.out.println("El pokemon elegido no es tipo Planta");
+                            break;
+                        }
+                    } else {
+                        System.out.println("Opcion no valida");
+                        break;
+                    }
                     break;
                 case 5:
+                    for (Pokeball p : pokeball) {
+                        System.out.println(pokeball.indexOf(p) + ". " + p);
+                    }
+                    System.out.println("Ingrese el indice de la pokebola que quiere");
+                    int ind = leer.nextInt();
+                    while (ind > pokeball.size()) {
+                        System.out.println("Indice no valido");
+                        System.out.println("Ingrese el indice de la pokebola que quiere");
+                        ind = leer.nextInt();
+                    }
+                    
                     break;
                 case 6:
                     break;
