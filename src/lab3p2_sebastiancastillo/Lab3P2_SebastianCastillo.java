@@ -31,6 +31,7 @@ public class Lab3P2_SebastianCastillo {
         int op = leer.nextInt();
         ArrayList<Pokemon> pokemon = new ArrayList();
         ArrayList<Pokeball> pokeball = new ArrayList();
+        ArrayList<Pokemon> pokemondisp = new ArrayList();
         while (op != 7) {
             switch (op) {
                 case 1:
@@ -52,6 +53,7 @@ public class Lab3P2_SebastianCastillo {
                         System.out.println("Ingese la potencia de sus llamas");
                         int llamas = leer.nextInt();
                         pokemon.add(new Fire_Type(llamas, nombre, entrada, naturaleza));
+                        pokemondisp.add(new Fire_Type(llamas, nombre, entrada, naturaleza));
                     } else if (op2 == 2) {
                         boolean vivir;
                         System.out.println("Ingrese el nombre de su pokemon");
@@ -79,6 +81,7 @@ public class Lab3P2_SebastianCastillo {
                         System.out.println("Ingrese su rapidez al nadar");
                         int rapidez = leer.nextInt();
                         pokemon.add(new Water_Type(vivir, rapidez, nombre, entrada, naturaleza));
+                        pokemondisp.add(new Water_Type(vivir, rapidez, nombre, entrada, naturaleza));
                     } else if (op2 == 3) {
                         System.out.println("Ingrese el nombre de su pokemon");
                         leer.nextLine();
@@ -103,6 +106,7 @@ public class Lab3P2_SebastianCastillo {
                             dominio = leer.nextInt();
                         }
                         pokemon.add(new Grass_Type(habitat, dominio, nombre, entrada, naturaleza));
+                        pokemondisp.add(new Grass_Type(habitat, dominio, nombre, entrada, naturaleza));
                     }
 
                     break;
@@ -211,14 +215,18 @@ public class Lab3P2_SebastianCastillo {
                     }
                     break;
                 case 5:
-                    if(pokeball.isEmpty()){
+                    if (pokeball.isEmpty()) {
                         System.out.println("No hay pokebolas");
                         break;
                     }
-                    if(pokemon.isEmpty()){
+                    if (pokemon.isEmpty()) {
                         System.out.println("No hay pokemones disponibles");
                         break;
                     }
+                    if(pokemondisp.isEmpty()){
+                        System.out.println("Todos los pokemons estan atrapados");
+                    }
+
                     for (Pokeball p : pokeball) {
                         System.out.println(pokeball.indexOf(p) + ". " + p);
                     }
@@ -245,16 +253,20 @@ public class Lab3P2_SebastianCastillo {
                     if (op2 == 1) {
                         if (pokeball.get(ind).getEficiencia() == 3) {
                             System.out.println("Ha capturado el pokemon con exito");
+                            pokemon.get(random).setAtrapado(true);
                             pokemon.get(random).setPokeballdisp(pokeball.get(ind));
                             pokeball.remove(ind);
+                            pokemondisp.remove(random);
                         } else if (pokeball.get(ind).getEficiencia() == 2) {
                             if (pokeball.get(ind).getEficiencia() < randomp) {
                                 System.out.println("Ha fallado la captura ");
                                 pokeball.remove(ind);
                             } else {
                                 System.out.println("Ha capturado el pokemon con exito");
+                                pokemon.get(random).setAtrapado(true);
                                 pokemon.get(random).setPokeballdisp(pokeball.get(ind));
                                 pokeball.remove(ind);
+                                pokemondisp.remove(random);
                             }
                         } else {
                             if (pokeball.get(ind).getEficiencia() < randomp) {
@@ -262,8 +274,10 @@ public class Lab3P2_SebastianCastillo {
                                 pokeball.remove(ind);
                             } else {
                                 System.out.println("Ha capturado el pokemon con exito");
+                                pokemon.get(random).setAtrapado(true);
                                 pokemon.get(random).setPokeballdisp(pokeball.get(ind));
                                 pokeball.remove(ind);
+                                pokemondisp.remove(random);
                             }
                         }
                     } else if (op2 == 2) {
@@ -272,6 +286,10 @@ public class Lab3P2_SebastianCastillo {
                     }
                     break;
                 case 6:
+                    if (pokemon.isEmpty()) {
+                        System.out.println("No hay pokemones disponibles");
+                        break;
+                    }
                     break;
                 default:
                     System.out.println("Ingrese una opcion valida");
