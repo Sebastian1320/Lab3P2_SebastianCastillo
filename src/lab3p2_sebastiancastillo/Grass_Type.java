@@ -12,8 +12,8 @@ public class Grass_Type extends Pokemon {
     private String habitat;
     private int dominio;
 
-    public Grass_Type(String habitat, int dominio, String nombre, int entrada_p, String naturaleza, boolean atrapado) {
-        super(nombre, entrada_p, naturaleza, atrapado);
+    public Grass_Type(String habitat, int dominio, String nombre, int entrada_p, String naturaleza) {
+        super(nombre, entrada_p, naturaleza);
         this.habitat = habitat;
         this.dominio = dominio;
     }

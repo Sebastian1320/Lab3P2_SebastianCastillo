@@ -14,11 +14,10 @@ public class Pokemon {
     protected String  naturaleza;
     protected boolean atrapado;
 
-    public Pokemon(String nombre, int entrada_p, String naturaleza, boolean atrapado) {
+    public Pokemon(String nombre, int entrada_p, String naturaleza) {
         this.nombre = nombre;
         this.entrada_p = entrada_p;
         this.naturaleza = naturaleza;
-        this.atrapado = atrapado;
     }
 
     public String getNombre() {

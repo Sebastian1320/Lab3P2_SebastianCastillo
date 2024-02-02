@@ -11,10 +11,11 @@ package lab3p2_sebastiancastillo;
 public class Fire_Type extends Pokemon {
     private int llamas;
 
-    public Fire_Type(int llamas, String nombre, int entrada_p, String naturaleza, boolean atrapado) {
-        super(nombre, entrada_p, naturaleza, atrapado);
+    public Fire_Type(int llamas, String nombre, int entrada_p, String naturaleza) {
+        super(nombre, entrada_p, naturaleza);
         this.llamas = llamas;
     }
+    
 
     public int getLlamas() {
         return llamas;
