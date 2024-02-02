@@ -22,7 +22,7 @@ public class Lab3P2_SebastianCastillo {
         Random rng = new Random();
         System.out.println("***** M E N U *****");
         System.out.println("1. Crear pokemon");
-        System.out.println("2. Crar Pokebola");
+        System.out.println("2. Crear Pokebola");
         System.out.println("3. Listar pokemon");
         System.out.println("4. Eliminar Pokemon");
         System.out.println("5. Capturar pokemon");
@@ -211,6 +211,14 @@ public class Lab3P2_SebastianCastillo {
                     }
                     break;
                 case 5:
+                    if(pokeball.isEmpty()){
+                        System.out.println("No hay pokebolas");
+                        break;
+                    }
+                    if(pokemon.isEmpty()){
+                        System.out.println("No hay pokemones disponibles");
+                        break;
+                    }
                     for (Pokeball p : pokeball) {
                         System.out.println(pokeball.indexOf(p) + ". " + p);
                     }
@@ -227,17 +235,17 @@ public class Lab3P2_SebastianCastillo {
                         random = rng.nextInt(pokemon.size());
                     }
                     System.out.println("EL POKEMON " + pokemon.get(random).getNombre() + " HA APARECIDO");
-                    System.out.println("Desea utilizar la pokeball para capturarlo 1.Si, 2.Huir");
+                    System.out.println("Desea utilizar la pokeball para capturarlo 1. Si/2. Huir");
                     op2 = leer.nextInt();
                     while (op2 > 2 || op2 < 1) {
                         System.out.println("Opcion no valida");
-                        System.out.println("Desea utilizar la pokeball para capturarlo 1.Si, 2.Huir");
+                        System.out.println("Desea utilizar la pokeball para capturarlo 1.Si/2.Huir");
                         op2 = leer.nextInt();
                     }
                     if (op2 == 1) {
                         if (pokeball.get(ind).getEficiencia() == 3) {
                             System.out.println("Ha capturado el pokemon con exito");
-                            pokemon.get(random).setPokeball(pokeball.get(ind));
+                            pokemon.get(random).setPokeballdisp(pokeball.get(ind));
                             pokeball.remove(ind);
                         } else if (pokeball.get(ind).getEficiencia() == 2) {
                             if (pokeball.get(ind).getEficiencia() < randomp) {
@@ -245,7 +253,7 @@ public class Lab3P2_SebastianCastillo {
                                 pokeball.remove(ind);
                             } else {
                                 System.out.println("Ha capturado el pokemon con exito");
-                                pokemon.get(random).setPokeball(pokeball.get(ind));
+                                pokemon.get(random).setPokeballdisp(pokeball.get(ind));
                                 pokeball.remove(ind);
                             }
                         } else {
@@ -254,7 +262,7 @@ public class Lab3P2_SebastianCastillo {
                                 pokeball.remove(ind);
                             } else {
                                 System.out.println("Ha capturado el pokemon con exito");
-                                pokemon.get(random).setPokeball(pokeball.get(ind));
+                                pokemon.get(random).setPokeballdisp(pokeball.get(ind));
                                 pokeball.remove(ind);
                             }
                         }
@@ -272,7 +280,7 @@ public class Lab3P2_SebastianCastillo {
             }
             System.out.println("***** M E N U *****");
             System.out.println("1. Crear pokemon");
-            System.out.println("2. Crar Pokebola");
+            System.out.println("2. Crear Pokebola");
             System.out.println("3. Listar pokemon");
             System.out.println("4. Eliminar Pokemon");
             System.out.println("5. Capturar pokemon");
