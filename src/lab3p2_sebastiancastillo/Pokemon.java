@@ -13,6 +13,7 @@ public class Pokemon {
     protected int entrada_p;
     protected String  naturaleza;
     protected boolean atrapado;
+    protected Pokeball pokeball;
 
     public Pokemon(String nombre, int entrada_p, String naturaleza) {
         this.nombre = nombre;
@@ -52,9 +53,19 @@ public class Pokemon {
         this.atrapado = atrapado;
     }
 
+    public Pokeball getPokeball() {
+        return pokeball;
+    }
+
+    public void setPokeball(Pokeball pokeball) {
+        this.pokeball = pokeball;
+    }
+
+   
+
     @Override
     public String toString() {
-        return  "Nombre: " + nombre + ", Entrada en Pokedex:" + entrada_p + ", Naturaleza: " + naturaleza + ", Atrapado: " + atrapado ;
+        return  "Nombre: " + nombre + ", Entrada en Pokedex:" + entrada_p + ", Naturaleza: " + naturaleza + ", Atrapado: " + atrapado+", Pokebola asignada: "+pokeball ;
     }
     
     
